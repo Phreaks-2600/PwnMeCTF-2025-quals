@@ -1,0 +1,8 @@
+version: "2.27.0"
+services:
+  decode_runner:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "12345:12345"
