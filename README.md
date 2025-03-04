@@ -49,21 +49,21 @@ Github : https://github.com/Phreak-2600
 | [Dura Lesc Sed Lesc](./Misc/Dura_Lesc_Sed_Lesc/)                            | Misc        | [Prince2Lu](https://x.com/Prince2lu2)            | Medium        | 11 |
 | [Mafia at the end of the block 2](./Misc/Mafia_at_the_end_of_the_block_2/)                            | Misc        |  [Wepfen](https://x.com/wepfen)  & Tzer             | Medium        | 50 |
 | [Just a private key](./Misc/Just_a_private_key/)                            | Misc        | [rayanlecat](https://x.com/rayanlecat)            | Hard        | 4 |
-| [GOT](./Pwn/GOT/)                            | Pwn        | 6i97e9v           | Easy        | 209 |
+| [GOT](./Pwn/GOT/)                            | Pwn        | [6i97e9v](https://x.com/6iG7e9V)           | Easy        | 209 |
 | [noPrint](./Pwn/noPrint/)                            | Pwn        | [express](https://x.com/expr3ss_)            | Medium        | 26 |
-| [Einstein](./Pwn/Einstein/)                            | Pwn        | 6i97e9v           | Medium        | 48 |
+| [Einstein](./Pwn/Einstein/)                            | Pwn        | [6i97e9v](https://x.com/6iG7e9V)           | Medium        | 48 |
 | [Holy Cow Revenge](./Pwn/Holy_Cow_Revenge/)                            | Pwn        | [ValeKoZ](https://x.com/valekoz_)            | Medium        | 29 |
 | [Compress](./Pwn/Compress/)                            | Pwn        | abricot            | Medium        | 18 |
-| [Hidden Key Recovery](./Pwn/HiddenKeyRecovery/)                            | Pwn        | 6i97e9v           | Hard        | 6 |
+| [Hidden Key Recovery](./Pwn/HiddenKeyRecovery/)                            | Pwn        | [6i97e9v](https://x.com/6iG7e9V)           | Hard        | 6 |
 | [Back to the past](./Reverse/Back_to_the_past/)                            | Reverse        | [Fayred](https://x.com/fayred_fr)            | Easy        | 169 |
 | [C4 License](./Reverse/C4_License/)                            | Reverse        | [Fayred](https://x.com/fayred_fr)            | Medium        | 80 |
 | [Flattened Vyper](./Reverse/Flattened_Vyper/)                            | Reverse        | [Fabrisme](https://x.com/FabrismeGoeland)            | Medium        | 41 |
 | [Super Secure Network](./Reverse/Super_Secure_Network/)                            | Reverse        | [Prince2Lu](https://x.com/Prince2Lu2)           | Hard        | 32 |
 | [Mimirev](./Reverse/Mimirev/)                            | Reverse        | [Lexter](https://x.com/lxt33r)            | Hard        | 48 |
 | [Profile Editor](./Web/Profile_Editor/)                            | Web        | [Skylopha](https://x.com/Skylopha)            | Easy        | 370 |
-| [Hack The Bot 1](./Web/Hack_The_Bot_1/)                            | Web        | ToG            | Easy        | 100 |
+| [Hack The Bot 1](./Web/Hack_The_Bot_1/)                            | Web        | [ToG](https://tog.re)            | Easy        | 100 |
 | [Crackford](./Web/Crackford/)                            | Web        | [Eteck](https://x.com/Eteckq)            | Medium        | 16 |
 | [sayMyName](./Web/sayMyName/)                            | Web        | [Fayred](https://x.com/fayred_fr)            | Medium        | 42 |
 | [A 18 years old bug](./Web/A_18_years_old_bug/)                            | Web        | [Mizu](https://x.com/kevin_mizu) & [Geluchat](https://x.com/Geluchat)            | Hard        | 3 |
-| [Hack The Bot 2](./Web/Hack_The_Bot_2/)                            | Web        | ToG            | Hard        | 12 |
+| [Hack The Bot 2](./Web/Hack_The_Bot_2/)                            | Web        | [ToG](https://tog.re)            | Hard        | 12 |
 | [Pwnshop](./Web/Pwnshop/)                            | Web        | [rayanlecat](https://x.com/rayanlecat)            | Hard        | 4 |
