@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say my name</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        .is-centered-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="is-centered-page has-background-light">
+        <form id="contactForm" class="box" style="width: 300px;">
+            <div class="field">
+                <label class="label" for="name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" id="name" name="name" placeholder="Enter you name" required>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary is-fullwidth" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        <div id="responseModal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Image</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <p id="modalContent">Loading...</p>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-link" id="closeModalBtn">Close</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.getElementById("closeModalBtn").addEventListener("click", function(event){
+        document.getElementById("responseModal").classList.remove("is-active")
+    });
+    document.getElementById("responseModal").querySelector(".delete").addEventListener("click", function(event){
+        document.getElementById("responseModal").classList.remove("is-active")
+    });
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        console.log("submit form...");
+
+        const name = document.getElementById("name").value;
+
+        const data = `name=${encodeURIComponent(name)}`;
+
+        fetch('/your-name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: data
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('responseModal').classList.add('is-active');
+                return response.text();
+            } else {
+                throw new Error('An error has occurred');
+            }
+        })
+        .then(html => {
+            document.getElementById("modalContent").innerHTML = html;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    });
+    </script>
+</body>
+</html>

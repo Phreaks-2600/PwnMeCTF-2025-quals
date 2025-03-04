@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="uk-background-custom">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.ico')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/uikit.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/custom.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    <title>Profil</title>
+  </head>
+
+  <body>
+    <div class="uk-flex uk-flex-center uk-flex-middle">
+      <img
+        id="logo"
+        alt="Pwnme Logo"
+        src="{{ url_for('static', filename='img/pwnme.jpg') }}"
+      />
+    </div>
+    <div class="uk-height-auto uk-position-center uk-background-muted">
+      <div
+        class="uk-margin-auto uk-card uk-card-default uk-card-body form-container uk-animation-fade uk-width-large"
+      >
+        <p class="uk-text-center">hello, {{current_user.username}}</p>
+        {% if current_user.role == 'guest' %}
+        <p class="uk-text-center">As a regular user, you can't do anything for now</p>
+        {% endif %} {% if current_user.role == 'support' %}
+        <p class="uk-text-center">There isn't any user requests</p>
+        {% endif %} {% if current_user.role == 'top_super_user' %}
+        <p class="uk-text-center">Congrats! {{flag}}</p>
+        {% endif %}
+        <hr />
+        <div class="uk-text-center">
+          <a href="{{url_for('logout')}}" class="uk-link-muted"
+            ><button class="uk-button">Logout</button></a
+          >
+          <p class="uk-text-center">
+            Contact support if you have any problems: {{support_user.mail}}
+            <!-- Support {{support_user.username}} (id={{support_user.id}}) -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

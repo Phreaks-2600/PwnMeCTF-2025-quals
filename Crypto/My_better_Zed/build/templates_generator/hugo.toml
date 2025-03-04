@@ -1,0 +1,5 @@
+languageCode = 'en-us'
+title = 'PWNME | OpenZED'
+
+theme = "lynx"
+disableKinds = ["taxonomy", "sitemap", "section", "rss", "term"]

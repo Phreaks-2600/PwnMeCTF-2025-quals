@@ -1,0 +1,6 @@
+services:
+  holy_cow_revenge:
+    build: .
+    image: holy_cow_revenge:latest
+    ports:
+      - "4000:4000"

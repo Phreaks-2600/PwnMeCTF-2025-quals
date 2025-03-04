@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.png">
+    <link href="/static/css/main.css" rel="stylesheet" />
+    <title>A 18 years old bug :)</title>
+</head>
+<body>
+    <form method="GET" action="/" class="mb">
+        <h2>Which link do you want to safely visit?</h2>
+        <input name="url" value="">
+    </form><br>
+    <hr>
+    <iframe sandbox src="<%= url %>" class="mt" frameBorder="0" width="80%" height="800"></iframe>
+    <iframe src=":)" hidden></iframe>
+</body>
+</html>

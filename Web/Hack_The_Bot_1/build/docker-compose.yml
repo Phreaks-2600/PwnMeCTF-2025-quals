@@ -1,0 +1,7 @@
+version: "3"
+services:
+  hack-the-bot:
+    build: .
+    image: pwnme/hack-the-bot:latest
+    ports:
+      - "127.0.0.1:8888:80"

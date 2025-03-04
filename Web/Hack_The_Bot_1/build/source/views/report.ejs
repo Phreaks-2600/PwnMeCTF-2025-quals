@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test XSS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <div>
+                    <a class="navbar-brand" href="#">HackMyBot</a>
+                    <a class="nav-link d-inline" href="/">Articles</a>
+                    <a class="nav-link d-inline" href="/report">Report</a>
+                </div>
+                <div class="search-bar input-group">
+                    <input type="text" id="search-input" placeholder="Search..." class="form-control">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="search-icon"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="center-container">
+        <div class="report-form">
+            <h1>You found a new payload ?</h1>
+            <form id="reportForm">
+                <input type="text" name="url" id="urlInput" placeholder="https://exemple.com?q=a;$(id)" required>
+                <button type="submit">Report</button>
+                <span id="message"></span>
+            </form>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

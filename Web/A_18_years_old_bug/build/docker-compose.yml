@@ -1,0 +1,9 @@
+version: "3"
+services:
+  old-bug:
+    build: .
+    image: pwnme/old-bug:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - FLAG=PWNME{39aecf9e5936d6a7825fba059efcc166}

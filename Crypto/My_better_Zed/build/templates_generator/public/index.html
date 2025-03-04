@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="en-us" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>PWNME | OpenZED</title>
+    <meta name="title" content="PWNME | OpenZED" />
+  
+  <meta name="description" content="" />
+  
+  
+  
+  <link rel="canonical" href="/" />
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.617eb1368a8fe2747e7a29a53a2748fd31046deeb753b961477d733f78087736c8d2fce8e925d690b4d58754db8419174f309aa4ec225fdf7df041f2b5e618af.css"
+    integrity="sha512-YX6xNoqP4nR&#43;eimlOidI/TEEbe63U7lhR31zP3gIdzbI0vzo6SXWkLTVh1TbhBkXTzCapOwiX9998EHyteYYrw=="
+  />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="/">
+  <meta property="og:site_name" content="PWNME | OpenZED">
+  <meta property="og:title" content="PWNME | OpenZED">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PWNME | OpenZED">
+
+  
+  
+    <meta name="generator" content="Hugo 0.143.1">
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  
+  
+</head>
+<body
+    class="bg-neutral m-auto flex h-screen max-w-7xl flex-col px-6 text-lg leading-7 text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-white"
+  >
+    <main class="flex-grow">
+  <article class="mt-10 flex h-full flex-col items-center justify-center text-center">
+    <header class="mb-3 flex flex-col items-center">
+      
+      <h1 class="text-4xl font-extrabold dark:text-white">
+        OpenZED (beta)
+      </h1>
+      
+        <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+          A free container encryption tool
+        </h2>
+      
+      
+    </header>
+    
+      <div class="mt-4 flex min-w-full flex-row sm:min-w-0">
+         
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              
+              
+              
+              
+              
+              
+              
+              
+
+            
+            
+			
+
+          <div class="flex-1 "> 
+        
+          
+          
+            <a
+              class="link link-dev mb-3 rounded py-2 text-lg sm:px-24 inline-block"
+              style="white-space:nowrap;"
+              href="/encrypt_flag/"
+              target="_blank"
+              
+              rel="me noopener noreferrer"
+            ><span class="mr-1">
+
+</span>Encrypt flag
+            </a>
+
+            <br>
+
+            
+            
+          
+
+          </div>
+          
+
+         
+         
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              
+              
+              
+              
+              
+              
+              
+              
+
+            
+            
+			
+
+          <div class="flex-1 "> 
+        
+          
+
+              
+            <form 
+              
+              action="/encrypt/" 
+              
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <button
+                type="submit"
+                class="link link-dev mb-3 rounded py-2 text-lg sm:px-24"
+                target="_blank"
+                
+                rel="me noopener noreferrer"
+              ><span class="mr-1">
+
+</span>Encrypt a file
+              </button> 
+              <br>
+
+
+              
+              
+              <input style="width: 70%;" type="text" id="username" name="username" placeholder="username (optional)" maxlength="32"/> <br>
+              <input style="width: 70%;" type="text" id="password" name="password" placeholder="password in hex (optional)" /> <br>
+              <input style="width: 70%;" type="text" id="iv" name="iv" placeholder="IV in hex (optional)" maxlength="32"/> <br>
+              <label for="file" class="btn">Select file to encrypt (1 MB max) </label>
+              
+
+              <input type="file" id="file" name="file" /> <br>
+              <input type="reset"/> <br>
+
+
+
+            </form>
+
+          
+          
+
+          </div>
+          
+
+         
+         
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              
+              
+              
+              
+              
+              
+              
+              
+
+            
+            
+			
+
+          <div class="flex-1 "> 
+        
+          
+
+              
+            <form 
+              
+              action="/decrypt/" 
+              
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <button
+                type="submit"
+                class="link link-dev mb-3 rounded py-2 text-lg sm:px-24"
+                target="_blank"
+                
+                rel="me noopener noreferrer"
+              ><span class="mr-1">
+
+</span>Decrypt a file
+              </button> 
+              <br>
+
+
+              
+              
+              <input style="width: 70%;" type="text" id="username" name="username" placeholder="username" maxlength="32"/> <br>
+              <input style="width: 70%;" type="text" id="password" name="password" placeholder="password in hex" /> <br>
+              <label for="file" class="btn">Select file to decrypt (1 MB max) </label>
+              
+
+              <input type="file" id="file" name="file" /> <br>
+              <input type="reset"/> <br>
+
+
+
+            </form>
+
+          
+          
+
+          </div>
+          
+
+         
+        
+
+      </div>
+    
+  </article>
+</main><footer class="py-10">
+  <div class="text-center">
+    
+    
+  </div>
+  
+  
+
+</footer>
+</body>
+</html>

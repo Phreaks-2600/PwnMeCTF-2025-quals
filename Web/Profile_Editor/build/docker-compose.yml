@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  challenge:
+    build: .
+    ports:
+      - "127.0.0.1:8700:5000"

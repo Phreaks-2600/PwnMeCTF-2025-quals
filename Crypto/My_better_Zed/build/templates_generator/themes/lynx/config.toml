@@ -1,0 +1,19 @@
+languageCode = "en"
+defaultContentLanguage = "en"
+
+title = "PWNME | OpenZED"
+
+[params.author]
+  name = "OpenZED (beta)"
+  headline = "A free container encryption tool"
+
+  links = [
+	{ dev = { href = "/encrypt_flag/", text = "Encrypt flag"}},
+	{ dev = { href = "/encrypt/", text = "Encrypt a file", encrypt = true}},
+	{ dev = { href = "/decrypt/", text = "Decrypt a file", decrypt = true}}
+  ]
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.86.1"

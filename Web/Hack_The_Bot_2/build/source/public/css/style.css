@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    color: #343a40;
+    margin: 0;
+}
+
+.header {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.article-box {
+    margin: 20px 0;
+}
+
+.article-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.article-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: visible;
+}
+
+.search-bar {
+    margin: 20px 0;
+    width: 50%;
+    max-width: 300px;
+}
+
+.nav-link, .navbar-brand {
+    color: #707070;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.input-group-text {
+    background-color: white;
+    border: none;
+}
+
+.report-form {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.report-form h1 {
+    text-align: center;
+    color: #333;
+}
+
+.report-form input[type="text"] {
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+}
+
+.report-form button {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #535150;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#message {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.report-form button:hover {
+    background-color: #8d8c8c;
+}
+

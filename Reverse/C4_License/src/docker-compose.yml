@@ -1,0 +1,6 @@
+services:
+  c4-license:
+    build: .
+    image: c4-license:latest
+    ports:
+      - "1337:1337"

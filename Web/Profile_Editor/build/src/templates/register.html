@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Register</h2>
+        <form method="POST">
+            <div class="user-box">
+                <input type="text" name="username" id="username" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" id="password" required="">
+                <label>Password</label>
+            </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit" class="custom-submit-with-animations">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

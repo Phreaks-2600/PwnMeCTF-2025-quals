@@ -1,0 +1,7 @@
+services:
+  einstein:
+    build: .
+    image: einstein:latest
+    privileged: true
+    ports:
+      - "5000:5000"

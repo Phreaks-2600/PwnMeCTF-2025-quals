@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Casino - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Royal Casino</div>
+            <ul>
+                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li id="vip-link"><a href="./vip.html"><i class="fas fa-crown"></i> VIP</a></li>
+                <li><button id="connectWalletBtn"><i class="fas fa-wallet"></i> Connecter Wallet</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Welcome to Royal Casino</h1>
+        <p class="vip-message">Win to receive an exclusive VIP access !</p>
+        <p class="vip-message">1 spin = 0.1 ether </p>
+        <div class="carousel-container">
+            <div id="carousel" class="carousel"></div>
+            <div class="center-cursor"></div>
+        </div>
+        <button id="spinButton">Spin !</button>
+        <p id="result"></p>
+    </main>
+
+    <script>
+        async function getWillWinFromContract() {
+            const casinoAddress = "{{ casino_address }}";
+            const casinoContractABI = JSON.parse('{{ casino_abi | tojson }}');
+            const rpc ="{{ rpc }}";
+
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    const web3 = new Web3(window.ethereum);
+                    const contract = new web3.eth.Contract(casinoContractABI, casinoAddress);
+                    
+                    // Vérifiez si le contrat est bien déployé
+                    const code = await web3.eth.getCode(casinoAddress);
+                    if (code === '0x') {
+                        throw new Error("The contract is not deployed at this address.");
+                    }
+
+                    const accounts = await web3.eth.getAccounts();
+                    const sender = accounts[0];
+                    console.log("Connected account:", sender);
+                    console.log("accounts :", accounts);
+                    
+                    const tx = await contract.methods.playCasino(0).send({ // You're choosing to 0 everytime ? That's nice from you <3
+                        from: sender,
+                        value: web3.utils.toWei("0.1", "ether"),
+                        gas: 300000,
+                    });
+                    
+                    const checkWinResult = await contract.methods.checkWin().call();
+                    console.log("Check Win result: ", checkWinResult);
+
+                    return checkWinResult; 
+
+                } catch (error) {
+                    
+                    console.error("Error while interacting with the smart contract.", error);
+                    return null;
+                }
+            } else {
+                console.error("MetaMask is not installed");
+                return null;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('carousel');
+            const spinButton = document.getElementById('spinButton');
+            const result = document.getElementById('result');
+            const totalItems = 100;
+            const jackpotIndex = Math.floor(Math.random() * totalItems);
+
+            for (let i = 0; i < totalItems; i++) {
+                const item = document.createElement('div');
+                item.classList.add('item');
+                item.textContent = 'Lose';
+                carousel.appendChild(item);
+            }
+
+            spinButton.addEventListener('click', async () => {
+                result.textContent = '';
+                spinButton.disabled = true;
+
+                try {
+
+                    const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+                    if (accounts.length === 0) {
+                        alert("Please connect to MetaMask !");
+                        spinButton.disabled = false;
+                        return;
+                    }
+
+                    var willWin = await getWillWinFromContract();
+
+                    if (willWin === null) {
+                        throw new Error("Unable to get the result of the spin !");
+                    }
+
+                    const itemWidth = carousel.children[0].offsetWidth;
+                    let finalOffset = 0;
+
+                    if (willWin) {
+                        finalOffset = jackpotIndex * itemWidth - (carousel.offsetWidth / 2 - itemWidth / 2);
+                    } else {
+                        finalOffset = Math.floor(Math.random() * (carousel.scrollWidth - carousel.offsetWidth));
+                    }
+
+                    carousel.style.transform = `translateX(-${finalOffset}px)`;
+
+                    setTimeout(() => {
+                        if (willWin) {
+                            result.textContent = `JACKPOT !`;
+                        } else {
+                            result.textContent = 'Lost ...';
+                        }
+                        spinButton.disabled = false;
+                    }, 5000);
+                } catch (error) {
+                    console.error("Error during the execution :", error);
+                    result.textContent = "An error occured, please retry.";
+                    spinButton.disabled = false;
+                }
+            });
+        });
+
+        const connectWalletBtn = document.getElementById('connectWalletBtn');
+
+        async function connectWallet() {
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    const account = accounts[0];
+                    connectWalletBtn.innerHTML = `<i class="fas fa-wallet"></i> ${account.slice(0, 6)}...${account.slice(-4)}`;
+                } catch (error) {
+                    console.error("Error while establishing connection to the wallet :", error);
+                }
+            } else {
+                alert("MetaMask is not installed.");
+            }
+        }
+
+        connectWalletBtn.addEventListener('click', connectWallet);
+
+        window.addEventListener('load', async () => {
+            if (typeof window.ethereum !== 'undefined') {
+                const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+                if (accounts.length > 0) {
+                    const account = accounts[0];
+                    connectWalletBtn.innerHTML = `<i class="fas fa-wallet"></i> ${account.slice(0, 6)}...${account.slice(-4)}`;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

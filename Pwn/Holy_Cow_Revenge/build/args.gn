@@ -1,0 +1,5 @@
+# Build arguments go here.
+symbol_level = 2
+is_debug = false
+v8_enable_sandbox = false
+v8_enable_object_print = true

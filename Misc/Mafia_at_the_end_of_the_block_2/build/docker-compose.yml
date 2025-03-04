@@ -1,0 +1,16 @@
+services:
+  casino:
+    build: .
+    ports:
+      - "10020:10020"
+      - "10019:10019"
+    restart: unless-stopped
+    environment:
+      - FLAG=PWNME{th3_H0us3_41way5_w1n_bu7_sh0uld_be_4fr41d_0f_7h3_ul7im4te_g4m8l3r!}
+      - SUCCESS="Congratulations ! You can access the vip page ! "
+      - PORT=10020
+      - HTTP_PORT=10019
+      - PUBLIC_IP=127.0.0.1
+      - FUNC_SIG_IS_SOLVED=isSolved()
+      - SHARED_SECRET=pwnmesupersecretforadmins
+      - ENV=production

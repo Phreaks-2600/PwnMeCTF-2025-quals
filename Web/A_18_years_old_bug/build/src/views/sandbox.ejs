@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.png">
+    <link href="/static/css/main.css" rel="stylesheet" />
+    <title>Safely Sandboxed Content</title>
+</head>
+<body>
+    <script>
+        if (top !== window && top.location.origin === window.location.origin) {
+            var params = new URLSearchParams(location.search);
+            document.body.innerHTML = params.get("html");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  genie:
+    build: .
+    ports:
+      - "8085:8085"
+    environment:
+      - FLAG=PWNME{3Nc0D1n9_cAN_ALWaY2_B3_R3V3r53D}

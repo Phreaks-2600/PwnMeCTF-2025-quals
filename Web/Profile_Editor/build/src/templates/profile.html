@@ -1,0 +1,26 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <title>Profile</title>
+    </head>
+    <body>
+        <div class="login-box">
+            <h2>Welcome, {{ username }}!</h2>
+            <div class="btn-container">
+                <form method="POST">
+                    <div class="user-box">
+                        <textarea name="profile" rows="10" cols="40">{{ profile }}</textarea>
+                    </div>
+                    <div class="user-box">
+                        <button type="submit" class="custom-submit-with-animations">Save Profile</button>
+                    </div>
+                </form>
+                <div class="user-box">
+                    <button onclick="location = '/show_profile'" class="custom-submit-with-animations">Show Profile</button>
+                </div>
+            </div>        
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+    </html>

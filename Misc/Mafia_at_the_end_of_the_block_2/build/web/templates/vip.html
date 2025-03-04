@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Casino - VIP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Royal Casino</div>
+            <ul>
+                <li><a href="./index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li id="vip-link"><a href="./vip.html"><i class="fas fa-crown"></i> VIP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <h1>VIP area</h1>
+        <p>Welcome to the Casino Royale VIP area. Take advantage of our exclusive offers and premium games.</p>
+        
+        <div class="chat-container">
+            <div class="message user1">So, Tony, have you seen what they're offering to the VIPs here? It's clean, isn't it?</div>
+            <div class="message user2">Hey, Vinnie, yeah, clean... But let's not forget why we're here. We're not here for the snacks.</div>
+            <div class="message user1">Relax, relax. I've spotted a few targets with well filled wallet hanging around. We could quietly make them spit some cash.</div>
+            <div class="message user2">Watch out, there's always ears hanging around. And cameras. We don't want to be spotted.</div>
+            <div class="message user1">Don't worry, I know what I'm doing. I've got a little set of rigged cards in my pocket. They won't any differences.</div>
+            <div class="message user2">And then what do we do with the money?</div>
+            <div class="message user1">We launder it, as usual. It's a good thing they don't have their hands on {{ flag }}, otherwise we'd be screwed.</div>
+            <div class="message user2">{{ flag }}? What's ts all about? You'd better not be putting me in trouble with your bs.</div>
+            <div class="message user1">It's nothing, it's nothing. Forget about it. Just focus on the game. Let's make some money and get out of here.</div>
+            <div class="message user2">Yeah... I don't like this. But we're already here. So we might as well get the job done. But no waves, understand?</div>            
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

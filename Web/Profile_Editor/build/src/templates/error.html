@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Error</title>
+</head>
+<body>
+    <h1>Error</h1>
+    <p>{{ msg }}</p>
+    <a href="{{ return_to }}">Back</a>
+</body>
+</html>

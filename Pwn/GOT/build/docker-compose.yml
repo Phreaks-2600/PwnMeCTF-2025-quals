@@ -1,0 +1,7 @@
+services:
+  got:
+    build: .
+    image: got:latest
+    privileged: true
+    ports:
+      - "5000:5000"

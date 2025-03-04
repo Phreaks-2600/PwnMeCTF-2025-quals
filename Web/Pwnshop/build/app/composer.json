@@ -1,0 +1,15 @@
+{
+    "require": {
+        "wikimedia/less.php": "^5.2",
+        "firebase/php-jwt": "^6.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Api\\": "api/",
+            "App\\Models\\": "src/models/",
+            "App\\Database\\": "src/database/",
+            "App\\Security\\": "src/security/"
+        }
+    }
+}

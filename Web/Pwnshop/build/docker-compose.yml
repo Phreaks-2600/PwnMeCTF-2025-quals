@@ -1,0 +1,14 @@
+services:
+  pwnshop:
+    container_name: pwnshop
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - DB_HOST=127.0.0.1
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_NAME=${DB_NAME}
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

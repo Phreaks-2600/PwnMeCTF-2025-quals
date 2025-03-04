@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  vending-machine:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - FLAG=PWNME{weird_things_leads_t0_weird_shit}
+    ports:
+      - 3000

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Show Profile</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Profile for {{ username }}</h2>
+        <div class="profile-box ">
+            <p>{{ profile }}</p>
+        </div>
+        <div class="user-box">
+            <button onclick="location = '/profile'" class="custom-submit-with-animations">Back to Profile</button>
+        </div>
+    </div>
+</body>
+</html>
+    

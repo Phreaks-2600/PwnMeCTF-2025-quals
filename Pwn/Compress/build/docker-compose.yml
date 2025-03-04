@@ -1,0 +1,7 @@
+version: "3"
+services:
+  compresse:
+    build: .
+    image: pwnme/compresse:latest
+    ports:
+      - "1337:1337"

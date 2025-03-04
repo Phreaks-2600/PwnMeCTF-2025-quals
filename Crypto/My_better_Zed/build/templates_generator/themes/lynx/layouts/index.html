@@ -1,0 +1,140 @@
+{{ define "main" }}
+  <article class="mt-10 flex h-full flex-col items-center justify-center text-center">
+    <header class="mb-3 flex flex-col items-center">
+      {{ with .Site.Params.Author.image }}
+        {{ $src := . }}
+        {{ $resource := "" }}
+        {{ if $.Page.Resources.GetMatch $src }}
+          {{ $resource = $.Page.Resources.GetMatch $src }}
+        {{ else if resources.GetMatch $src }}
+          {{ $resource = resources.Get $src }}
+        {{ end }}
+        {{ with $resource }}
+          {{ $src = (.Fill "288x288").RelPermalink }}
+        {{ end }}
+        <img
+          class="mb-2 h-36 w-36 rounded-full"
+          width="144"
+          height="144"
+          alt="{{ $.Site.Params.Author.name | default "Author" }}"
+          src="{{ $src }}"
+        />
+      {{ end }}
+      <h1 class="text-4xl font-extrabold dark:text-white">
+        {{ .Params.title | default .Site.Params.Author.name | default .Site.Title | emojify }}
+      </h1>
+      {{ with .Site.Params.Author.headline }}
+        <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+          {{ . | markdownify | emojify }}
+        </h2>
+      {{ end }}
+      {{ with .Content }}
+        <section class="prose pt-5 dark:prose-invert">{{ . | emojify }}</section>
+      {{ end }}
+    </header>
+    {{ with .Site.Params.Author.links }}
+      <div class="mt-4 flex min-w-full flex-row sm:min-w-0">
+        {{ range $links := . }} <!-- Lecture des différents liens-->
+          {{ range $type, $data := $links }}
+            {{ $href := $data }}
+            {{ $icon := $type }}
+            {{ $text := i18n (printf "link.%s" $type) }}
+            {{ $target := "_blank" }}
+            {{ $title := "" }}
+            {{ $form := false }}
+            {{ $decrypt := false }}
+            {{ $encrypt := false }}
+            {{ if reflect.IsMap $data }}
+              {{ with $data.href }}{{ $href = . }}{{ end }}
+              {{ with $data.icon }}{{ $icon = . }}{{ end }}
+              {{ with $data.text }}{{ $text = . }}{{ end }}
+              {{ with $data.target }}{{ $target = . }}{{ end }}
+              {{ with $data.title }}{{ $title = . }}{{ end }}
+              {{ with $data.form }}{{ $form = . }}{{ end }}
+              {{ with $data.decrypt }}{{ $decrypt = . }}{{ end }}
+              {{ with $data.encrypt }}{{ $encrypt = . }}{{ end }}
+
+            {{ end }}
+            
+			<!-- entrée pour un bouton -->
+
+          <div class="flex-1 "> 
+        
+          {{if not (or $encrypt $decrypt)}}
+          
+            <a
+              class="link link-{{ $type }} mb-3 rounded py-2 text-lg sm:px-24 inline-block"
+              style="white-space:nowrap;"
+              href="{{ $href }}"
+              target="{{ $target }}"
+              {{ with $title }}title="{{ . }}"{{ end }}
+              rel="me noopener noreferrer"
+            >
+              {{- with $icon -}}
+                <span class="mr-1">{{ partial "icon.html" . }}</span>
+              {{- end -}}
+              {{ $text | emojify }}
+            </a>
+
+            <br>
+
+            
+            {{else}}
+
+              
+            <form 
+              {{if $encrypt}}
+              action="/encrypt/" 
+              {{else}}
+              action="/decrypt/" 
+              {{end}}
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <button
+                type="submit"
+                class="link link-{{ $type }} mb-3 rounded py-2 text-lg sm:px-24"
+                target="{{ $target }}"
+                {{ with $title }}title="{{ . }}"{{ end }}
+                rel="me noopener noreferrer"
+              >
+                {{- with $icon -}}
+                  <span class="mr-1">{{ partial "icon.html" . }}</span>
+                {{- end -}}
+                {{ $text | emojify }}
+              </button> 
+              <br>
+
+
+              
+              {{if $decrypt}}
+              <input style="width: 70%;" type="text" id="username" name="username" placeholder="username" maxlength="32"/> <br>
+              <input style="width: 70%;" type="text" id="password" name="password" placeholder="password in hex" /> <br>
+              <label for="file" class="btn">Select file to decrypt (1 MB max) </label>
+              {{else}}
+              <input style="width: 70%;" type="text" id="username" name="username" placeholder="username (optional)" maxlength="32"/> <br>
+              <input style="width: 70%;" type="text" id="password" name="password" placeholder="password in hex (optional)" /> <br>
+              <input style="width: 70%;" type="text" id="iv" name="iv" placeholder="IV in hex (optional)" maxlength="32"/> <br>
+              <label for="file" class="btn">Select file to encrypt (1 MB max) </label>
+              {{end}}
+
+              <input type="file" id="file" name="file" /> <br>
+              <input type="reset"/> <br>
+
+
+
+            </form>
+
+          {{ end }}
+          
+
+          </div>
+          {{ end }}
+
+         
+        {{ end }}
+
+      </div>
+    {{ end }}
+  </article>
+{{ end }}

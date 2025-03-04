@@ -1,0 +1,8 @@
+services:
+  saymyname:
+    build: .
+    image: saymyname:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - FLAG=PWNME{b492b312612c741b3b6597f925f88198}

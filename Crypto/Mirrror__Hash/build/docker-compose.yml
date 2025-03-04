@@ -1,0 +1,10 @@
+version: "2.27.0"
+services:
+  not_idea:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - FLAG=PWNME{K3ls3y_aNd_5cHn3ieR_1s_4w3s0m3}
+    ports:
+      - 3000

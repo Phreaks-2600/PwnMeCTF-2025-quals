@@ -1,0 +1,2 @@
+docker build -t HTBot .
+docker run -d -p 80:80 HTBot
