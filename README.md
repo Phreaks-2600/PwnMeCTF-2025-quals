@@ -41,7 +41,7 @@ Github : https://github.com/Phreak-2600
 | [MyZed](./Crypto/MyZed/)                            | Crypto        | [Wepfen](https://x.com/wepfen)            | Easy        | 168 |
 | [My better Zed](./Crypto/My_better_Zed/)                            | Crypto        | [Wepfen](https://x.com/wepfen)            | Easy        | 99 |
 | [Square Power](./Crypto/Square_Power/)                            | Crypto        | [LighTender](https://x.com/LighTender_)            | Easy        | 256 |
-| [Mirror Hash](./Crypto/Mirror_Hash/)                            | Crypto        | [LighTender](https://x.com/LighTender_)            | Hard        | 22 |
+| [Mirror Hash](./Crypto/Mirrror__Hash/)                            | Crypto        | [LighTender](https://x.com/LighTender_)            | Hard        | 22 |
 | [Vending Machine](./Crypto/Vending_Machine/)                            | Crypto        | [Ectario](https://x.com/Ectari0)            | Hard        | 22 |
 | [Decode Runner](./Misc/Decode_Runner/)                            | Misc        | offpath            | Easy        | 73 |
 | [Missing cells](./Misc/Missing_cells/)                            | Misc        | Mat            | Easy        | 76 |
@@ -54,7 +54,7 @@ Github : https://github.com/Phreak-2600
 | [Einstein](./Pwn/Einstein/)                            | Pwn        | 6i97e9v           | Medium        | 48 |
 | [Holy Cow Revenge](./Pwn/Holy_Cow_Revenge/)                            | Pwn        | [ValeKoZ](https://x.com/valekoz_)            | Medium        | 29 |
 | [Compress](./Pwn/Compress/)                            | Pwn        | abricot            | Medium        | 18 |
-| [Hidden Key Recovery](./Pwn/Hidden_Key_Recovery/)                            | Pwn        | 6i97e9v           | Hard        | 6 |
+| [Hidden Key Recovery](./Pwn/HiddenKeyRecovery/)                            | Pwn        | 6i97e9v           | Hard        | 6 |
 | [Back to the past](./Reverse/Back_to_the_past/)                            | Reverse        | [Fayred](https://x.com/fayred_fr)            | Easy        | 169 |
 | [C4 License](./Reverse/C4_License/)                            | Reverse        | [Fayred](https://x.com/fayred_fr)            | Medium        | 80 |
 | [Flattened Vyper](./Reverse/Flattened_Vyper/)                            | Reverse        | [Fabrisme](https://x.com/FabrismeGoeland)            | Medium        | 41 |
