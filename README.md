@@ -2,8 +2,8 @@
 
 # PwnMe CTF 2025 Quals
 
-PwnMe CTF is a CTF hosted by [Phreaks 2600](https://x.com/phreaks2600).
-The CTF takes place in two phases: online qualifications and the finals, on site in Montigny-le-Bretonneux, France at [2600 school](https://www.2600.eu/).
+PwnMe CTF is a CTF hosted by [Phreaks 2600](https://x.com/phreaks2600) and [École 2600](https://www.2600.eu/).
+The CTF takes place in two phases: online qualifications and the finals, on site in Montigny-le-Bretonneux, France at [École 2600](https://www.2600.eu/).
 
 ## Dates
 Start : 28/02/2025 at 20:00 (UTC+1)<br>
